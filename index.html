@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Intent — Fast Local Inbox for Actions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Intent is a fast local inbox for actions. Capture fast. Route later. Built for real life and designed to stand on its own." />
+  <meta name="description" content="Intent is a fast local inbox for actions. Capture fast. Route later. Built for speed, clarity, and real daily use." />
   <style>
     :root {
       --bg-deep: #040814;
@@ -146,8 +146,8 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
-      gap: 2.5rem;
+      grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.2fr);
+      gap: 2rem;
       align-items: center;
       padding: 2.5rem 0 3rem;
     }
@@ -161,8 +161,8 @@
     }
 
     .hero h1 {
-      font-size: 2.45rem;
-      line-height: 1.15;
+      font-size: 2.65rem;
+      line-height: 1.1;
       margin: 0 0 1rem;
     }
 
@@ -170,7 +170,8 @@
       margin: 0 0 1.4rem;
       color: var(--text-muted);
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.7;
+      max-width: 640px;
     }
 
     .hero-actions {
@@ -180,79 +181,61 @@
       align-items: center;
     }
 
-    .hero-graphic {
+    .hero-panel {
       border-radius: 18px;
       border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top, #111827 0, #020617 80%);
-      padding: 1.6rem;
-      position: relative;
-      overflow: hidden;
-      min-height: 280px;
+      background: linear-gradient(145deg, #0B1020, #050815);
+      padding: 1.3rem;
+      min-height: 320px;
     }
 
-    .orbital {
-      position: absolute;
-      border-radius: 999px;
-      border: 1px dashed rgba(63,224,255,0.22);
+    .phone {
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 24px;
+      border: 1px solid rgba(63,224,255,0.18);
+      background: radial-gradient(circle at top, #111827 0, #050815 85%);
+      padding: 1rem;
+      box-shadow: 0 0 24px rgba(63,224,255,0.08);
     }
 
-    .orbital.o1 { width: 75%; height: 75%; top: 11%; left: 13%; }
-    .orbital.o2 { width: 52%; height: 52%; top: 22%; left: 24%; }
-    .orbital.o3 { width: 32%; height: 32%; top: 34%; left: 35%; border-style: solid; border-color: rgba(63,224,255,0.45); }
-
-    .node {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent-cyan);
-      box-shadow: 0 0 12px rgba(63,224,255,0.7);
-    }
-
-    .node.n1 { top: 18%; left: 52%; }
-    .node.n2 { top: 58%; left: 22%; }
-    .node.n3 { top: 71%; left: 68%; }
-    .node.n4 { top: 34%; left: 30%; }
-    .node.n5 { top: 44%; left: 72%; }
-
-    .hero-graphic h2 {
-      position: relative;
-      margin: 0 0 0.4rem;
-      font-size: 1rem;
-      z-index: 2;
-    }
-
-    .hero-graphic p {
-      position: relative;
-      margin: 0;
-      font-size: 0.85rem;
+    .phone-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
       color: var(--text-muted);
-      max-width: 85%;
-      z-index: 2;
-      line-height: 1.55;
+      margin-bottom: 0.9rem;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.25rem 0.7rem;
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 999px;
+    .task-list {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .task {
+      padding: 0.8rem 0.85rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
       border: 1px solid var(--border-subtle);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 1.2rem;
-      position: relative;
-      z-index: 2;
+      font-size: 0.92rem;
+      color: var(--text-main);
     }
 
-    .pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent-cyan);
-      box-shadow: 0 0 6px rgba(63,224,255,0.8);
+    .task-actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+
+    .task-actions div {
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255,255,255,0.03);
+      padding: 0.7rem 0.5rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
 
     section {
@@ -260,13 +243,13 @@
     }
 
     section h2 {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       margin-bottom: 0.7rem;
     }
 
     section p {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       line-height: 1.7;
       margin: 0.2rem 0 0.6rem;
     }
@@ -282,6 +265,13 @@
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
       margin-top: 1.2rem;
     }
@@ -303,13 +293,6 @@
       color: var(--text-muted);
       font-size: 0.92rem;
       line-height: 1.6;
-    }
-
-    .usecases {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.2rem;
     }
 
     .callout {
@@ -363,18 +346,13 @@
     }
 
     @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-graphic { order: -1; }
-      .grid-3 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .usecases {
+      .hero,
+      .grid-3,
+      .grid-2,
+      .callout {
         grid-template-columns: minmax(0, 1fr);
       }
       .callout {
-        grid-template-columns: 1fr;
         text-align: left;
       }
     }
@@ -384,6 +362,9 @@
         display: none;
       }
       .logo { min-width: auto; }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
@@ -398,10 +379,9 @@
 
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#overview">Overview</a>
-      <a href="#why">Why Intent</a>
       <a href="#features">Features</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#persona-lite">Persona Lite</a>
+      <a href="#how">How It Works</a>
+      <a href="#why">Why Intent</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -413,36 +393,34 @@
   <section class="hero">
     <div>
       <div class="hero-kicker">Fast Local Action Capture</div>
-      <h1>A fast local inbox for actions.</h1>
+      <h1>Capture fast. Route later.</h1>
       <p>
-        Intent was created for one simple need: capture thoughts, reminders, tasks, and commands without friction.
-        Fast enough for real life. Simple enough to trust every day.
+        Intent is a fast local inbox for actions. Capture a thought, reminder, task, or command the moment it happens,
+        then decide what to do with it when you’re ready. Clean, fast, practical, and built for real daily use.
       </p>
       <div class="hero-actions">
         <button class="button-primary" onclick="location.href='#download'">Get Intent</button>
-        <button class="button-secondary" onclick="location.href='#why'">Why I created it</button>
+        <button class="button-secondary" onclick="location.href='#features'">See features</button>
       </div>
     </div>
 
-    <div class="hero-graphic" aria-hidden="true">
-      <div class="orbital o1"></div>
-      <div class="orbital o2"></div>
-      <div class="orbital o3"></div>
-      <div class="node n1"></div>
-      <div class="node n2"></div>
-      <div class="node n3"></div>
-      <div class="node n4"></div>
-      <div class="node n5"></div>
-
-      <h2>Capture First. Decide Later.</h2>
-      <p>
-        Intent is built for quick capture, clear handling, and practical action. It stands on its own as a product,
-        while also connecting naturally to a broader future.
-      </p>
-
-      <div class="pill">
-        <span class="pill-dot"></span>
-        <span>Built to last as its own product</span>
+    <div class="hero-panel" aria-hidden="true">
+      <div class="phone">
+        <div class="phone-top">
+          <span>Intent preview</span>
+          <span>Local-first</span>
+        </div>
+        <div class="task-list">
+          <div class="task">Pick up dog food</div>
+          <div class="task">Text Jason about lumber prices</div>
+          <div class="task">Call insurance tomorrow</div>
+          <div class="task">Share the note later</div>
+        </div>
+        <div class="task-actions">
+          <div>Delete</div>
+          <div>Notify</div>
+          <div>Share</div>
+        </div>
       </div>
     </div>
   </section>
@@ -450,189 +428,123 @@
   <section id="overview">
     <h2>What Is Intent?</h2>
     <p>
-      Intent is a fast local inbox for actions. It gives you a clean place to catch something now and decide what to do with it later.
+      Intent gives you a clean place to catch something now and handle it later. No cluttered workflow. No unnecessary steps. Just quick capture and practical control.
     </p>
     <p>
-      That might be a thought, a reminder, a to-do, a follow-up, or a command. The point is not complexity. The point is speed, clarity, and momentum.
+      Use it for thoughts, errands, reminders, follow-ups, quick notes, or anything else that needs to get out of your head before it disappears.
     </p>
 
     <div class="callout">
       <div>
-        <h3>Designed for actual use</h3>
+        <h3>Built for actual life</h3>
         <p>
-          Intent is not trying to be everything. It is designed to do one important job extremely well: help you capture quickly and keep moving.
+          Intent is designed for speed, forgiveness, and everyday usefulness — not for bloated process or feature overload.
         </p>
       </div>
-      <button class="button-secondary" onclick="location.href='#features'">See features</button>
+      <button class="button-secondary" onclick="location.href='#how'">How it works</button>
     </div>
   </section>
 
-  <section id="why">
-    <h2>Why Intent Exists</h2>
-    <p>
-      I created Intent because I wanted a faster way to capture thoughts without dealing with clutter, confirmation boxes, folder structures, or account friction.
-    </p>
-    <p>
-      I wanted something immediate: tap, speak, save, move on.
-    </p>
-    <p>
-      Intent is built around that principle. It is meant to feel practical, forgiving, and fast enough to stay out of your way.
-    </p>
-  </section>
-
   <section id="features">
-    <h2>Core Product Qualities</h2>
+    <h2>Core Features</h2>
     <p>
-      Intent is deliberately focused. It is built to be useful now, not overloaded with unnecessary process.
+      Intent is deliberately focused. Everything about it is built around making capture feel quick, natural, and dependable.
     </p>
-    <p class="meta-label">Current direction</p>
+    <p class="meta-label">What makes it good</p>
 
     <div class="grid-3">
       <div class="card">
-        <h3>Fast capture</h3>
+        <h3>Voice or text capture</h3>
         <p>
-          Capture by voice or text with minimal friction so an idea becomes an action before it disappears.
+          Catch a thought however it comes. Speak it or type it and keep moving.
         </p>
       </div>
 
       <div class="card">
-        <h3>Route later</h3>
+        <h3>Fast handling</h3>
         <p>
-          Capture first. Decide what to do with it afterward through sharing, staging, notification workflows, or future routing paths.
+          Capture first, then decide what to do with it later instead of interrupting yourself in the moment.
         </p>
       </div>
 
       <div class="card">
         <h3>Built-in forgiveness</h3>
         <p>
-          Undo and simple handling patterns help speed feel safe rather than punishing.
+          Undo and simple actions make speed feel safe instead of punishing.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Notification staging</h3>
+        <p>
+          Keep important items visible and in motion without letting them get buried.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Quick sharing</h3>
+        <p>
+          Send captured items where they need to go when it is time to act on them.
         </p>
       </div>
 
       <div class="card">
         <h3>Local-first feel</h3>
         <p>
-          Intent starts from a grounded philosophy: an action inbox should feel close, dependable, and ready when you need it.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Real-life utility</h3>
-        <p>
-          The app is designed for reminders, errands, follow-ups, quick notes, operational tasks, and day-to-day action capture.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Strong on its own</h3>
-        <p>
-          Intent is meant to stand as a lasting product in its own right, not a temporary step toward something else.
+          Intent feels close, immediate, and ready when you need it.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="ecosystem">
-    <h2>Where Intent Fits</h2>
+  <section id="how">
+    <h2>How It Works</h2>
     <p>
-      Intent lives within a broader ecosystem, but it is important to understand it on its own terms first: Intent is a complete product for fast local action capture.
-    </p>
-    <p>
-      Beyond that, it also connects naturally to a larger family of systems around personal intelligence and governed AI.
+      Intent keeps the process simple so the app does not get in your way.
     </p>
 
-    <div class="usecases">
+    <div class="grid-2">
       <div class="card">
-        <h3>Intent</h3>
+        <h3>1. Capture it</h3>
         <p>
-          The action surface: fast, practical, local-first, and durable as a standalone product.
+          The moment something matters, put it into Intent by voice or text.
         </p>
       </div>
 
       <div class="card">
-        <h3>Persona Lite</h3>
+        <h3>2. Keep moving</h3>
         <p>
-          A future consumer-facing form of Persona designed for personal use, built to be powerful rather than watered down.
+          Do not stop to organize your whole life in the moment. Just save it and move on.
         </p>
       </div>
 
       <div class="card">
-        <h3>StarBridge Persona</h3>
+        <h3>3. Review later</h3>
         <p>
-          The governed runtime-based Persona system intended for critical, sensitive, and auditable environments.
+          Come back when you are ready and decide what should happen next.
         </p>
       </div>
 
       <div class="card">
-        <h3>How they relate</h3>
+        <h3>4. Route it</h3>
         <p>
-          Intent can remain what it is indefinitely, while also serving as a natural gateway into the broader Persona direction.
+          Delete it, stage it in notifications, share it, or send it into your next workflow.
         </p>
       </div>
-    </div>
-
-    <div class="callout">
-      <div>
-        <h3>One ecosystem, distinct roles</h3>
-        <p>
-          Intent is not a placeholder. Persona Lite is not a replacement for Intent. StarBridge Persona is not the same product for a different audience. Each has its own role.
-        </p>
-      </div>
-      <button class="button-secondary" onclick="location.href='https://starbridgeos.com'">Visit StarBridge OS</button>
     </div>
   </section>
 
-  <section id="persona-lite">
-    <h2>Intent and Persona Lite</h2>
+  <section id="why">
+    <h2>Why I Created Intent</h2>
     <p>
-      Intent serves as a natural gateway to Persona Lite, but it does not exist just to lead somewhere else.
+      I wanted a faster way to capture thoughts without fighting through clutter, confirmation boxes, and overbuilt workflow.
     </p>
     <p>
-      Persona Lite is the consumer-facing form of Persona: personal, powerful, and designed for everyday use. It is not simply a weaker version of Persona, and it is not a replacement for StarBridge Persona.
+      I wanted something immediate: tap, speak, save, move on.
     </p>
     <p>
-      StarBridge Persona remains the governed runtime-based system for environments that require trust, control, and auditability.
+      Intent comes from that need. It is built to feel practical, fast, and forgiving enough to use every day.
     </p>
-
-    <div class="usecases">
-      <div class="card">
-        <h3>Intent</h3>
-        <p>
-          The enduring capture surface. Fast, focused, and useful whether or not a user ever moves beyond it.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Persona Lite</h3>
-        <p>
-          The personal intelligence layer that can grow around capture and extend it with context, memory, and assistance.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Consumer-facing power</h3>
-        <p>
-          “Lite” refers to deployment context, not weakness. The goal is a personal form of Persona, not a stripped-down toy.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Governed Persona</h3>
-        <p>
-          StarBridge Persona remains the path for sensitive systems that require managed trust, runtime control, and auditing.
-        </p>
-      </div>
-    </div>
-
-    <div class="callout" style="border-color: rgba(201,162,77,0.28); background: radial-gradient(circle at top left, rgba(201,162,77,0.10), transparent 55%);">
-      <div>
-        <h3>Intent can live forever</h3>
-        <p>
-          Persona Lite may expand the ecosystem, but Intent keeps its own lasting value as a clean action-capture product.
-        </p>
-      </div>
-      <button class="button-secondary" onclick="location.href='#download'">Get Intent</button>
-    </div>
   </section>
 
   <section id="download">
@@ -648,7 +560,7 @@
   <section id="contact" class="footer-cta">
     <h2>Intent Inquiries</h2>
     <p>
-      For product questions, support, or ecosystem inquiries related to Intent, Persona Lite, or StarBridge Persona, contact us directly.
+      For product questions, support, or download information, contact us directly.
     </p>
     <p style="margin-top:0.2rem; margin-bottom:1.2rem;">
       Email: <a href="mailto:support@starbridgeos.com">support@starbridgeos.com</a>
@@ -660,7 +572,7 @@
 </main>
 
 <footer>
-  &copy; <span id="year"></span> Intent · Innovation Strategies LLC · A product in the broader StarBridge ecosystem.
+  &copy; <span id="year"></span> Intent · Innovation Strategies LLC
 </footer>
 
 <script>
